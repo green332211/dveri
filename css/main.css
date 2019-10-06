@@ -1,0 +1,14 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 16px;
+  background-color: #BDBDBD;
+  color: #757575;
+}
+
+body .navbar {
+  border: 1px solid #212121;
+}
+/*# sourceMappingURL=main.css.map */
