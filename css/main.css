@@ -55,11 +55,29 @@ body .btn {
   border-radius: 0.5rem;
   font-size: 1em;
   padding: 1rem 2rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 body .btn:hover {
   background-color: #3F51B5;
   color: #FFFFFF;
+}
+
+body .btn-inverse {
+  border: 2px solid #3F51B5;
+  background-color: #3F51B5;
+  color: #FFFFFF;
+  border-radius: 0;
+  font-size: 1em;
+  padding: 1rem 2rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+body .btn-inverse:hover {
+  color: #3F51B5;
+  background-color: transparent;
 }
 
 body .navbar {
@@ -143,11 +161,11 @@ body header form input:-ms-input-placeholder {
 }
 
 body .popcat {
-  background-image: url(..//img/background.jpg);
-  padding-bottom: 4rem;
-  background-size: cover;
+  background-image: url("../img/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 4rem;
 }
 
 body .popcat a {
@@ -190,5 +208,59 @@ body .popcat a:hover img {
 body .popcat a:hover p {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+}
+
+body .adv {
+  color: #FFFFFF;
+  background-image: url("../img/adv.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+body .adv:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(#303F9F), color-stop(50%, #303F9F), to(#FFFFFF));
+  background-image: linear-gradient(to right, #303F9F 0%, #303F9F 50%, #FFFFFF 100%);
+  opacity: .6;
+}
+
+body .adv .row {
+  padding: 3rem 0;
+}
+
+body .adv h6 {
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+body .adv p {
+  font-size: 0.7em;
+}
+
+body .popgoods {
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body .popgoods .row {
+  padding-bottom: 3rem;
+}
+
+body .popgoods .row:first-child {
+  padding-bottom: 0;
+}
+
+body .popgoods h6 {
+  font-size: 1em;
 }
 /*# sourceMappingURL=main.css.map */

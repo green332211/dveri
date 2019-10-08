@@ -1,11 +1,18 @@
-$primary-color-dark:   #303F9F;
-$primary-color:        #3F51B5;
-$primary-color-light:  #C5CAE9;
-$primary-color-text:   #FFFFFF;
-$accent-color:         #448AFF;
-$primary-text-color:   #212121;
+$primary-color-dark: #303F9F;
+$primary-color: #3F51B5;
+$primary-color-light: #C5CAE9;
+$primary-color-text: #FFFFFF;
+$accent-color: #448AFF;
+$primary-text-color: #212121;
 $secondary-text-color: #757575;
-$divider-color:        #BDBDBD;
+$divider-color: #BDBDBD;
+
+@mixin background-img($src) {
+    background-image: url($src);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 html {
     font-size: 10px;
@@ -15,14 +22,17 @@ body {
     font-size: 16px;
     background-color: $divider-color;
     color: $secondary-text-color;
+
     //Фикс контейнера
     .container {
         padding: 0;
     }
+
     // Заголовок
     .title {
         overflow: hidden;
         text-align: center;
+
         h4 {
             font-weight: bold;
             color: $secondary-text-color;
@@ -32,6 +42,7 @@ body {
             display: inline-block;
             vertical-align: middle;
         }
+
         &:before,
         &:after {
             content: "";
@@ -43,15 +54,18 @@ body {
             position: relative;
             opacity: .5;
         }
+
         &:before {
             margin-left: -100%;
             left: 1.5rem;
         }
+
         &:after {
             margin-right: -100%;
             right: 1.5rem;
         }
     }
+
     // Кнопки
     .btn {
         border: 2px solid $primary-color;
@@ -60,59 +74,86 @@ body {
         border-radius: 0.5rem;
         font-size: 1em;
         padding: 1rem 2rem;
+        transition: all 0.2s;
+
         &:hover {
             background-color: $primary-color;
             color: $primary-color-text;
         }
     }
+
+    .btn-inverse {
+        border: 2px solid $primary-color;
+        background-color: $primary-color;
+        color: $primary-color-text;
+        border-radius: 0;
+        font-size: 1em;
+        padding: 1rem 2rem;
+        transition: all 0.2s;
+
+        &:hover {
+            color: $primary-color;
+            background-color: transparent;
+        }
+    }
+
     //Меню
     .navbar {
         padding: 0.3rem 5rem;
         border: 1px solid $primary-text-color;
+
         .number-phone {
             color: $primary-color;
         }
+
         .navbar-nav {
-            li.nav-item > a.nav-link {
+            li.nav-item>a.nav-link {
                 color: $primary-text-color;
+
                 &:hover {
                     color: $primary-color;
                 }
             }
-            li.active > a.nav-link {
+
+            li.active>a.nav-link {
                 color: $primary-color;
             }
         }
     }
+
     // Шапка
     header {
-        background-image: url('../img/header.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        @include background-img('../img/header.png');
         padding: 15rem 3rem;
+
         p {
             color: $secondary-text-color;
         }
+
         h4 {
             font-size: 20px;
             font-weight: bold;
             color: $secondary-text-color;
-            > span {
+
+            >span {
                 color: $primary-color;
             }
         }
+
         form {
             border: double 1rem $primary-color-text;
+
             div {
                 background-color: rgba($primary-color-text, 0.95);
                 padding: 1.5rem;
             }
+
             span {
                 color: $primary-color;
                 font-weight: bold;
                 font-size: 1em;
             }
+
             input {
                 width: 100%;
                 padding: 1rem;
@@ -121,30 +162,33 @@ body {
                 border-radius: 0.5rem;
                 margin-top: 1.5rem;
                 margin-bottom: 1.5rem;
+
                 &::-webkit-input-placeholder {
                     color: $primary-color;
                 }
+
                 &:-moz-input-placeholder {
                     color: $primary-color;
                 }
+
                 &:-ms-input-placeholder {
                     color: $primary-color;
                 }
             }
         }
     }
+
     // Популярные категории
     .popcat {
-        background-image: url(..//img/background.jpg);
+        @include background-img('../img/background.jpg');
         padding-bottom: 4rem;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+
         a {
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
+
             p {
                 padding: 0;
                 margin: 0;
@@ -156,18 +200,67 @@ body {
                 z-index: 100;
                 transition: all 1s;
             }
+
             img {
                 transition: all 1s;
             }
+
             &:hover {
                 img {
                     background-color: $primary-color-light;
                     transform: scale(1.1);
                 }
+
                 p {
                     transform: scale(0.9);
                 }
             }
+        }
+    }
+
+    // Преимущества
+    .adv {
+        color: $primary-color-text;
+        @include background-img('../img/adv.jpg');
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-image: linear-gradient(to right, $primary-color-dark 0%, $primary-color-dark 50%, $primary-color-text 100%);
+            opacity: .6;
+        }
+
+        .row {
+            padding: 3rem 0;
+        }
+
+        h6 {
+            margin: 1rem 0;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        p {
+            font-size: 0.7em;
+        }
+    }
+
+    // Популярные товары
+    .popgoods {
+        @include background-img('../img/background.jpg')
+        .row {
+            padding-bottom: 3rem;
+        }
+        .row:first-child {
+            padding-bottom: 0;
+        }
+        h6 {
+            font-size: 1em;
         }
     }
 }
