@@ -252,7 +252,7 @@ body {
 
     // Популярные товары
     .popgoods {
-        @include background-img('../img/background.jpg')
+        @include background-img('../img/background.jpg');
         .row {
             padding-bottom: 3rem;
         }
