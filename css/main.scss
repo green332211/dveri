@@ -1,5 +1,6 @@
 $primary-color-dark: #303F9F;
 $primary-color: #3F51B5;
+$pr-color: '3f51b5';
 $primary-color-light: #C5CAE9;
 $primary-color-text: #FFFFFF;
 $accent-color: #448AFF;
@@ -12,6 +13,31 @@ $divider-color: #BDBDBD;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@mixin gradient-bg($color1, $color2, $color3) {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right, $color1 0%, $color2 50%, $color3 100%);
+    opacity: .6;
+}
+
+@mixin input-color($placeholder-color) {
+    &::-webkit-input-placeholder {
+        color: $placeholder-color;
+    }
+
+    &:-moz-input-placeholder {
+        color: $placeholder-color;
+    }
+
+    &:ms-input-placeholder {
+        color: $placeholder-color;
+    }
 }
 
 html {
@@ -162,18 +188,7 @@ body {
                 border-radius: 0.5rem;
                 margin-top: 1.5rem;
                 margin-bottom: 1.5rem;
-
-                &::-webkit-input-placeholder {
-                    color: $primary-color;
-                }
-
-                &:-moz-input-placeholder {
-                    color: $primary-color;
-                }
-
-                &:-ms-input-placeholder {
-                    color: $primary-color;
-                }
+                @include input-color($primary-color);
             }
         }
     }
@@ -225,14 +240,7 @@ body {
         position: relative;
 
         &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            background-image: linear-gradient(to right, $primary-color-dark 0%, $primary-color-dark 50%, $primary-color-text 100%);
-            opacity: .6;
+            @include gradient-bg($primary-color-dark, $primary-color, $primary-color-text);
         }
 
         .row {
@@ -253,14 +261,92 @@ body {
     // Популярные товары
     .popgoods {
         @include background-img('../img/background.jpg');
+
         .row {
             padding-bottom: 3rem;
         }
+
         .row:first-child {
             padding-bottom: 0;
         }
+
         h6 {
             font-size: 1em;
         }
+    }
+
+    // Заказать замер
+    .form_zamer {
+        position: relative;
+        @include background-img('../img/fiedback.jpg');
+
+        &:before {
+            @include gradient-bg($primary-color-dark, $primary-color, $primary-color-text);
+        }
+
+        .row {
+            padding: 3rem 0;
+
+        }
+
+        .h5 {
+            font-size: 1.2em;
+        }
+
+        .h6 {
+            font-size: 1em;
+        }
+
+        p {
+            font-size: 0.8em;
+        }
+
+        img {
+            margin-bottom: 1.5rem;
+            transition: all 0.5s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: 2px solid $primary-color-text;
+            margin-bottom: 1rem;
+            @include input-color($primary-color-text);
+        }
+
+        button {
+            color: $primary-color-text;
+            border: 2px solid $primary-color-text;
+            padding: 1rem;
+        }
+    }
+
+    // Отзывы
+    .reviews {
+        padding-bottom: 3rem;
+        @include background-img('../img/background.jpg');
+
+        .card {
+            height: 100%;
+
+            h5 {
+                font-size: 1em;
+                color: $primary-color;
+            }
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23#{$pr-color}' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+        }
+
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23#{$pr-color}' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+            }
+
     }
 }

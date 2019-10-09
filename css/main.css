@@ -156,7 +156,7 @@ body header form input:-moz-input-placeholder {
   color: #3F51B5;
 }
 
-body header form input:-ms-input-placeholder {
+body header form input:ms-input-placeholder {
   color: #3F51B5;
 }
 
@@ -226,8 +226,8 @@ body .adv:before {
   right: 0;
   left: 0;
   bottom: 0;
-  background-image: -webkit-gradient(linear, left top, right top, from(#303F9F), color-stop(50%, #303F9F), to(#FFFFFF));
-  background-image: linear-gradient(to right, #303F9F 0%, #303F9F 50%, #FFFFFF 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(#303F9F), color-stop(50%, #3F51B5), to(#FFFFFF));
+  background-image: linear-gradient(to right, #303F9F 0%, #3F51B5 50%, #FFFFFF 100%);
   opacity: .6;
 }
 
@@ -262,5 +262,103 @@ body .popgoods .row:first-child {
 
 body .popgoods h6 {
   font-size: 1em;
+}
+
+body .form_zamer {
+  position: relative;
+  background-image: url("../img/fiedback.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body .form_zamer:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(#303F9F), color-stop(50%, #3F51B5), to(#FFFFFF));
+  background-image: linear-gradient(to right, #303F9F 0%, #3F51B5 50%, #FFFFFF 100%);
+  opacity: .6;
+}
+
+body .form_zamer .row {
+  padding: 3rem 0;
+}
+
+body .form_zamer .h5 {
+  font-size: 1.2em;
+}
+
+body .form_zamer .h6 {
+  font-size: 1em;
+}
+
+body .form_zamer p {
+  font-size: 0.8em;
+}
+
+body .form_zamer img {
+  margin-bottom: 1.5rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+body .form_zamer img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+body .form_zamer input {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+body .form_zamer input::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+body .form_zamer input:-moz-input-placeholder {
+  color: #FFFFFF;
+}
+
+body .form_zamer input:ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+body .form_zamer button {
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  padding: 1rem;
+}
+
+body .reviews {
+  padding-bottom: 3rem;
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body .reviews .card {
+  height: 100%;
+}
+
+body .reviews .card h5 {
+  font-size: 1em;
+  color: #3F51B5;
+}
+
+body .reviews .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233f51b5' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+body .reviews .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233f51b5' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 /*# sourceMappingURL=main.css.map */
